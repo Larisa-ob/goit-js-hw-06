@@ -84,8 +84,13 @@ const users = [
     age: 39,
   },
 ];
-const getUserNames = (array) =>
-  array.map(({ name }) => {
-    return name;
+const getUsersWithGender = (users, gender) =>
+  users.filter(({ genders }) => {
+    return (...gender) => (gender === genders ? gender : 0);
   });
-console.log(getUserNames(users));
+/* .map(({ name }) => {
+      return name;
+    });*/
+
+console.log(getUsersWithGender(users, "male"));
+console.log(getUsersWithGender(users, "female"));
