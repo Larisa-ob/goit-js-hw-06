@@ -84,14 +84,13 @@ const users = [
     age: 39,
   },
 ];
-const getUsersWithGender = (array, genders) =>
+const getUsersWithFriend = (array, friendName) =>
   array
-    .filter(({ gender }) => {
-      return genders === gender;
-    })
-    .map(({ name }) => {
-      return name;
-    });
+    .filter(({ friends }) => friends.includes(friendName))
+    .map(({ name }) => name);
 
-console.log(getUsersWithGender(users, "male"));
-console.log(getUsersWithGender(users, "female"));
+console.log(getUsersWithFriend(users, "Briana Decker"));
+// [ 'Sharlene Bush', 'Sheree Anthony' ]
+
+console.log(getUsersWithFriend(users, "Goldie Gentry"));
+// [ 'Elma Head', 'Sheree Anthony' ]

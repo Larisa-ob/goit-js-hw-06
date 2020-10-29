@@ -84,14 +84,16 @@ const users = [
     age: 39,
   },
 ];
-const getUsersWithGender = (array, genders) =>
+const getUsersWithAge = (array, min, max) =>
   array
-    .filter(({ gender }) => {
-      return genders === gender;
+    .filter(({ age }) => {
+      return age >= min && age <= max;
     })
-    .map(({ name }) => {
-      return name;
+    .map(({ name, email }) => {
+      return {
+        name,
+        email,
+      };
     });
-
-console.log(getUsersWithGender(users, "male"));
-console.log(getUsersWithGender(users, "female"));
+console.log(getUsersWithAge(users, 20, 30));
+console.log(getUsersWithAge(users, 30, 40));

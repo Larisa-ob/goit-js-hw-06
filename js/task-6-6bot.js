@@ -84,14 +84,7 @@ const users = [
     age: 39,
   },
 ];
-const getUsersWithGender = (array, genders) =>
-  array
-    .filter(({ gender }) => {
-      return genders === gender;
-    })
-    .map(({ name }) => {
-      return name;
-    });
-
-console.log(getUsersWithGender(users, "male"));
-console.log(getUsersWithGender(users, "female"));
+const calculateTotalBalance = (arrays) =>
+  arrays.reduce((ass, { balance }) => balance + ass, 0);
+console.log(calculateTotalBalance(users));
+/* 20916*/
